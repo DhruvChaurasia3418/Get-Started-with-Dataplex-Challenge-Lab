@@ -1,0 +1,16 @@
+gcloud dataplex lakes create sensors \
+    --location=$LOCATION \
+    --display-name="sensors" \
+    --description="Ecommerce Domain"
+
+
+gcloud dataplex zones create raw-event-data \
+    --location=$LOCATION \
+    --lake=customer-engagements \
+    --display-name="Raw Event Data" \
+    --type=RAW \
+    --resource-location-type=SINGLE_REGION \
+    --discovery-enabled
+    
+    
+gsutil mb gs://    
